@@ -15,12 +15,36 @@
     --color-neutral: SLATEGRAY;
     --color-neutral-dark: DARKSLATEGRAY;
 
+    --global-color-sidebar-text: #FFFFFF;
+    --global-color-text: #4D4F5C; 
+    --global-color-icon-topbar: #BCBCCB;
+    --global-color-icon-sidebar: #A5A4BF;
+    --global-color-icon-sidebar__selected: #A3A0FB;
+    --global-color-header-text: #43425D;
+    --global-color-down: #FF4141;
+    --global-color-up: #3CC480;
+    --global-background-color-maincontent: #F0F0F7;
+    --global-backgroundcolor-topbar: #FFFFFF;
+    --global-backgroundcolor-sidebar: #43425D;
+    --global-backgroundcolor-impekable: #3B3B53;
+    --global-backgroundcolor-dashboard: #00000025;
+
     /* Shadows */
 
     /* border radius */
 
     /* transitions */
     --transition-alpha: .1s;
+
+    /* Whitespace */
+    --global-baseline: 5px;
+    --global-whitespace-xxs: var(--global-baseline);
+    --global-whitespace-xs: calc(var(--global-baseline) * 2);
+    --global-whitespace-sm: calc(var(--global-baseline) * 3);
+    --global-whitespace-md: calc(var(--global-baseline) * 4);
+    --global-whitespace-lg: calc(var(--global-baseline) * 5);
+    --global-whitespace-xl: calc(var(--global-baseline) * 6);
+
 }
 
 /*------------------------------------*\
@@ -98,20 +122,27 @@ h3 {
 
 h1 {
     font-size: 36px;
-    line-height: 48px;
-    margin: 0 0 24px;
+    /* line-height: 48px; */
+    line-height: calc(var(--global-baseline) * 10);
+    /* margin: 0 0 24px; */
+    margin: 0 0 var(--global-withespace-md);
 }
 
 h2 {
-    font-size: 32px;
-    line-height: 40px;
-    margin: 0 0 24px;
+    font-size: 28px;
+    /* line-height: 40px; */
+    font-weight: normal;
+    line-height: calc(var(--global-baseline) * 8);
+    /* margin: 0 0 24px; */
+    margin: 0 0 var(--global-whitespace-lg);
 }
 
 h3 {
     font-size: 26px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    /* line-height: 32px; */
+    line-height: calc(var(--global-baseline) * 6);
+    /* margin: 0 0 24px; */
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h4,
@@ -119,8 +150,10 @@ h5,
 h6 {
     font-size: 16px;
     font-weight: 600;
-    line-height: 24px;
-    margin: 0 0 24px;
+    /* line-height: 24px; */
+    line-height: calc(var(--global-baseline) * 5);
+    /* margin: 0 0 24px; */
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 p,
@@ -130,7 +163,8 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    /* margin: 0 0 24px; */
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 ul,
@@ -294,6 +328,37 @@ input::placeholder {
     ---
     Website main logo
 */
+
+
+/*
+    Component: App
+    ---
+    Design vd pagina
+*/
+
+.c-app{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.c-app__logo {
+    background-color: var(--global-backgroundcolor-impekable);
+}
+
+.c-app__topbar {
+    background-color: var(--global-backgroundcolor-topbar);
+}
+
+.c-app__sidebar {
+    background-color: var(--global-backgroundcolor-sidebar);
+}
+
+.c-app__main {
+    background-color: var(--global-backgroundcolor-dashboard);
+}
+
+
 
 /*------------------------------------*\
 #UTILITIES
