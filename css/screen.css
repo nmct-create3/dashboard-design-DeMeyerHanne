@@ -328,6 +328,12 @@ input::placeholder {
     ---
     Website main logo
 */
+.c-logo {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--global-color-sidebar-text);
+    padding: 20px 0 20px 20px;
+}
 
 
 /*
@@ -339,15 +345,19 @@ input::placeholder {
 .c-app{
     min-height: 100vh;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr;
+    letter-spacing: 2px;
 }
 
 .c-app__logo {
     background-color: var(--global-backgroundcolor-impekable);
+    /* padding: 0 var(--global-whitespace-md) var(--global-whitespace-md) 0; */
 }
 
 .c-app__topbar {
     background-color: var(--global-backgroundcolor-topbar);
+    box-shadow: 4px #00000010;
 }
 
 .c-app__sidebar {
@@ -358,6 +368,11 @@ input::placeholder {
     background-color: var(--global-backgroundcolor-dashboard);
 }
 
+
+.c-main-nav {
+    list-style-type: none;
+    
+}
 
 
 /*------------------------------------*\
