@@ -19,7 +19,7 @@
     --global-color-text: #4D4F5C; 
     --global-color-icon-topbar: #BCBCCB;
     --global-color-icon-sidebar: #A5A4BF;
-    --global-color-icon-sidebar__selected: #A3A0FB;
+    --global-color-icon-border: #A3A0FB;
     --global-color-header-text: #43425D;
     --global-color-down: #FF4141;
     --global-color-up: #3CC480;
@@ -58,7 +58,7 @@
 */
 
 html {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
     font-family: Helvetica, arial, sans-serif;
     color: var(--color-neutral-dark);
@@ -368,11 +368,94 @@ input::placeholder {
     background-color: var(--global-backgroundcolor-dashboard);
 }
 
+@media (min-width: 992px) {
+    .c-app__topbarn
+    .c-app__sidebar {
+        display: block;
+    }
+
+    .c-app {
+        display: grid;
+        grid-column-start: 17rem 1fr;
+        grid-template-rows: 70px 1fr;
+    }
+
+    .c-app__sidebar,
+    .c-app__main {
+        height: calc(100vh - var(--c-app__topbar-height));
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+
+
+/*
+    Component: Main nav
+    ---
+    Sidebar nav
+*/
 
 .c-main-nav {
-    list-style-type: none;
+    margin-bottom: 0;
+}
+
+.c-main-nav__list {
+    margin: var(--global-baseline) 0;
+}
+
+.c-main-nav__link {
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--global-color-sidebar-text);
+    font-size: 1rem; /*15px = root */
+    line-height: 20px;
+    padding: var(--global-whitespace-sm) var(--global-whitespace-lg) var(--global-whitespace-sm) var(--global-whitespace-md);
+    border-left: 5px solid var(--global-color-icon-border);
+    transform: translateX(-5px);
+    width: calc(100% + 5px);
+    transition: all var(--transition-beta);
+}
+
+.c-main-nav__link:hover {
+    transition: all var(--transition-alpha);
+}
+
+.c-main-nav__link,
+.c-main-nav__link:hover,
+.c-main-nav__link:visited {
+    color: var(--global-color-sidebar-text);
+}
+
+.c-main-nav__link:hover,
+.c-main-nav__link:focus,
+.is-selected .c-main-nav__link {
+    color: var(--global-color-sidebar-text);
+    background-color: var(--global-backgroundcolor-dashboard);
+    transform: none;
+}
+
+.c-main-nav__icon {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: var(--global-whitespace-xs);
+    fill: #A5A4BF;
+    transition: fill var(--global-transition-alpha);
+}
+
+.c-main-nav__link:hover .c-main-nav__icon,
+.c-main-nav__link:focus .c-main-nav__icon,
+.is-selected .c-main-nav__icon {
+    fill: #A3A0FB;
+}
+
+.c-main-nav__item {
     
 }
+
 
 
 /*------------------------------------*\
