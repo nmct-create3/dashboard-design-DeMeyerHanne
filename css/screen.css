@@ -389,6 +389,72 @@ input::placeholder {
 }
 
 
+/*
+    Component: Main content
+    ---
+    Content on the main page
+*/
+
+.c-dashboard {
+    display: grid;
+    grid-gap: var(--global-whitespace-lg);
+    margin-bottom: var(--global-whitespace-md);
+}
+
+.c-dashboard__item {
+    box-shadow: #00000004;
+    background-color: var(--global-background-color-maincontent);
+}
+
+@media screen and (min-width: 992px) {
+    .c-dashboard {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .c-dashboard__item {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/*
+    Component: Card
+*/
+.c-card {
+    width: 100%;
+    height: 100%;
+}
+
+.c-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-bottom: var(--global-whitespace-md); */
+}
+
+.c-card__title {
+    margin: 0;
+    font-size: 18px;
+    color: var(--global-color-text);
+    line-height: 13px;
+}
+
+.c-card-body {
+    
+}
+
+.c-input {
+    border: 1px solid #D7DAE2;
+    border-radius: 4px;
+    color: #4D4F5C;
+    background-color: var(--global-backgroundcolor-topbar);
+    font-size: 13px;
+    padding: 8px 12px;
+}
+
+.c-custom-select {
+    
+}
 
 /*
     Component: Main nav
@@ -558,6 +624,41 @@ input::placeholder {
 
 .u-text-sm {
     font-size: 14px;
+}
+
+
+/*
+    Utilities: span
+    ---
+    Utility classes to span grid items across the x and y axis
+*/
+
+@media (min-width: 992px) {
+    .u-x-span-3-bp3 {
+        grid-column: span 3;
+    }
+
+    .u-x-span-4-bp3 {
+        grid-column: span 4;
+    }
+
+    .u-x-span-6-bp3 {
+        grid-column: span 6;
+    }
+
+    .u-x-span-8-bp3 {
+        grid-column: span 8;
+    }
+
+    .u-x-span-9-bp3 {
+        grid-column: span 9;
+    }
+}
+
+@media (min-width: 992px) {
+    .u-y-span-2-bp3 {
+        grid-row: span 2;
+    }
 }
 
 /*------------------------------------*\
